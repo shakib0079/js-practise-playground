@@ -100,8 +100,24 @@ function endGame(number){
         gamePlay = false;
 
         userInput.setAttribute("disabled", "")
+
+        submitButton.setAttribute("value", "Start Game");
+
+        console.log(submitButton);
+
+        submitButton.addEventListener('click', (e) => {
+            startGame();
+        })
         
         // displayField.style.display = "none"
         //startGame()
     }
+}
+
+function startGame(){
+    gamePlay = true;
+    // console.log(previousGuesses.innerHTML);
+    previousGuesses.innerHTML = ''
+    counter = 10;
+    userInput.removeAttribute("disabled", "")
 }

@@ -72,10 +72,11 @@ html {
     box-sizing: border-box;
     text-align: center;
     width: 450px;
-    height: 550px;
+    height: auto;
     background-color: #474747;
     color: #fff;
     font-size: 25px;
+    padding: 20px 40px;
   }
   
   h1 {
@@ -90,3 +91,7 @@ html {
     text-align: center;
   }
   
+  .newGame {
+    display: block;
+    margin: auto;
+  }
