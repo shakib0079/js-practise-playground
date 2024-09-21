@@ -95,6 +95,8 @@ function startGameAgain(){
     console.log("the game start again!")
     starNewGame.style.display = "none"
 
+    let randomNumber = Math.floor(((Math.random() * 100) + 1))
+
     userInput.value = '';
     prevGuesses.innerHTML = "";
     userInput.removeAttribute("disabled", "")
