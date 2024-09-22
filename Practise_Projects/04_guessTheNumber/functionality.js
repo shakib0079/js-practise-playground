@@ -88,6 +88,7 @@ function endGame(){
     starNewGame.addEventListener('click', (e) => {
         e.preventDefault();
         startGameAgain()
+        let randomNumber = Math.floor(((Math.random() * 100) + 1))
     })
 }
 
@@ -95,7 +96,7 @@ function startGameAgain(){
     console.log("the game start again!")
     starNewGame.style.display = "none"
 
-    let randomNumber = Math.floor(((Math.random() * 100) + 1))
+    
 
     userInput.value = '';
     prevGuesses.innerHTML = "";
