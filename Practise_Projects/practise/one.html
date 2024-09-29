@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Practise One</title>
+</head>
+<body>
+    <h1>Hello World</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const bodyElement = document.querySelector('body');
+    const startButton = document.querySelector('#start');
+    const stopButton = document.querySelector('#stop');
+    const randomColor = function () {
+        // const randomNumber = Math.floor(Math.random() * 16);
+
+        const hexNumber = '0123456789ABCDEF'
+        let colour = '#'
+
+        for(let i=0; i<6; i++){
+            colour += hexNumber[Math.floor(Math.random() * 16)];
+        }
+        
+        return colour;
+    }
+    let clrInterval;
+    const startChangeColour = function(){
+        if(!clrInterval){
+            clrInterval = setInterval(colourChanger, 1000);
+        }
+        function colourChanger(){
+            bodyElement.style.backgroundColor = randomColor();
+        }  
+    }
+
+    const stopChangeColour = function(){
+        clearInterval(clrInterval);
+        clrInterval = null;
+    }
+
+    startButton.addEventListener('click', startChangeColour);
+    stopButton.addEventListener('click', stopChangeColour);
+
+    
+    // const clr = setInterval( randomColor ,1000);
+
+    // startButton.addEventListener('click', clr);
+
+    
+
+    // stoptButton.addEventListener('click', (e) => {
+    //     clearInterval(clr);
+    // })
+
+    // 
+    
+    // console.log(randomColor())
+    
+</script>
+</html>
